@@ -1,0 +1,17 @@
+/* Style for the thank you container */
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #00415f;
+  }
+  
+  /* Style for the thank you message */
+  .thank-you-message {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #fcfcfc; /* Blue color */
+  }
+  

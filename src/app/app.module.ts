@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SubmissionComponent } from './submission/submission.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     ErrorComponent,
     NavbarComponent,
-    NewSurveyComponent
+    NewSurveyComponent,
+    SubmissionComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

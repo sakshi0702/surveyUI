@@ -1,0 +1,21 @@
+<div class="form-container">
+    <div *ngFor="let question of formData?.questionList" class="form-control">
+      <label class="form-label">{{ question.question }}</label>
+      <!-- Based on questionType, render different types of form controls -->
+      <div *ngIf="question.questionType === 'SingleSelect'" class="single-select">
+        <div *ngFor="let option of question.options" class="radio-option">
+          <input type="radio" [(ngModel)]="formResponses[question.id]" [value]="option" required>{{ option }}
+        </div>
+      </div>
+      <div *ngIf="question.questionType === 'FivePointScale'" class="five-point-scale">
+        <div *ngFor="let value of ['1', '2', '3', '4', '5']" class="five-point-option">
+          <button [ngClass]="{'selected': formResponses[question.id] === value}" (click)="onScaleSelect(question.id, value)" required>{{ value }}</button>
+        </div>
+      </div>
+      <div *ngIf="question.questionType === 'Subjective'" class="subjective">
+        <input type="text" [(ngModel)]="formResponses[question.id]" class="text-input" required>
+      </div>
+    </div>
+    <button type="button" (click)="onSubmit()" class="submit-button">Submit</button>
+  </div>
+  
