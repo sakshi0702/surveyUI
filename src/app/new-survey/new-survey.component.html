@@ -1,0 +1,36 @@
+<div>
+  <h2>Survey Form</h2>
+  <form (submit)="submitForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="surveyData.name" name="name" required>
+    <label for="startTime">Start Time:</label>
+    <input type="datetime-local" id="startTime" [(ngModel)]="surveyData.startTime" name="startTime" required>
+    <label for="endTime">End Time:</label>
+    <input type="datetime-local" id="endTime" [(ngModel)]="surveyData.endTime" name="endTime" required>
+    <div *ngFor="let question of surveyData.questionList; let i = index">
+      <label for="description">Question Number: {{i+1}}</label>
+      <label for="description">Question Description:</label>
+      <input type="text" id="description" [(ngModel)]="question.question" name="description" required>
+      <label for="type">Question Type:</label>
+      <select id="type" [(ngModel)]="question.questionType" name="type" required>
+        <option value="Subjective">Text</option>
+        <option value="SingleSelect">Multiple Choice</option>
+      </select>
+      <div *ngIf="question.questionType === 'SingleSelect'">
+        <div *ngFor="let option of question.options; let j = index">
+          <label for="option">Option {{ j + 1 }}:</label>
+          <input type="text" id="option" [(ngModel)]="question.options[j]" name="option" required>
+          <button type="button" (click)="removeOption(question, j)">Remove Option</button>
+        </div>
+        <button type="button" (click)="addOption(question)">Add Option</button>
+      </div>
+      <div>
+        <button type="button" (click)="removeQuestion(i)">Remove Question</button>
+      </div>
+      <div>
+        <button type="button" (click)="addQuestion(i)">Add Question</button>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

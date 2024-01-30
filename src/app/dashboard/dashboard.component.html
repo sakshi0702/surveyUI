@@ -1,0 +1,18 @@
+<div class="table-top">
+  <button type="button" class="btn btn-active" (click)="getActiveSurveyList()">Active Surveys</button>
+  <button type="button" class="btn btn-completed" (click)="getCompletedSurveyList()">Completed Surveys</button>
+  <button type="button" class="btn btn-primary" (click)="createSurvey()">Create new survey</button>
+</div>
+<div class="card-container">
+  <div *ngFor="let data of data; let i = index" class="card">
+    <div class="card-body">
+      <h2 class="card-title" [innerText]="data.name"></h2>
+      <hr>
+      <div class="card-text">Number of response</div>
+      <div>Respondets</div>
+      <div>ENDS ON:</div>
+      <hr>
+      <a href="#" class="btn btn-primary">View detail</a>
+    </div>
+  </div>
+</div>
