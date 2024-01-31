@@ -38,4 +38,16 @@ export class ApiService {
   getColaboratedSurveys(param: any): Observable<any> {
     return this.http.get(`${this.apiUrl}/get-collaborated-survey/` + param.id);
   }
+
+  getParticularSurvey(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-particular-survey/` + param); // param will only have survey id
+  }
+
+  submitSurveyAnswers(surveyId: string, answerList: any[]): Observable<any> {
+    const body = {
+      surveyId: surveyId,
+      answerList: answerList
+    };
+    return this.http.post(`${this.apiUrl}/answer/${surveyId}`, body);
+  }
 }

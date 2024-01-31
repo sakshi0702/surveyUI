@@ -5,12 +5,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { ViewSurveyComponent } from './view-survey/view-survey.component';
+import { SubmissionComponent } from './submission/submission.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/form', component: NewSurveyComponent },
   { path: '', component: LoginComponent },
-  { path: 'view', component: ViewSurveyComponent }
+  { path: 'view', component: ViewSurveyComponent },
+  { path: 'submission/:id', component: SubmissionComponent },
+  { path: 'thankYou', component: ThankYouComponent }
 ];
 
 @NgModule({

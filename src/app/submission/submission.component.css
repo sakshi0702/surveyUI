@@ -1,0 +1,77 @@
+/* Style for form container */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #bfd6e2;
+
+  }
+  
+  /* Style for form label */
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style for form control */
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  /* Style for radio button options */
+  .radio-option {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  /* Style for submit button */
+  .submit-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00415f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for five-point scale container */
+.five-point-scale {
+    display: flex;
+  }
+  
+  /* Style for five-point scale buttons */
+  .five-point-scale button {
+    background-color: #00415f;
+    color: #fff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .five-point-scale button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for selected button */
+  .five-point-scale button.selected {
+    background-color: #0056b3;
+  }
+  
+  /* Style for text input */
+  .text-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  

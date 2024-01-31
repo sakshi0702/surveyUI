@@ -12,6 +12,8 @@ import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewSurveyComponent } from './view-survey/view-survey.component';
 import { DatePipe } from '@angular/common';
+import { SubmissionComponent } from './submission/submission.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DatePipe } from '@angular/common';
     ErrorComponent,
     NavbarComponent,
     NewSurveyComponent,
-    ViewSurveyComponent
+    ViewSurveyComponent,
+    SubmissionComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
