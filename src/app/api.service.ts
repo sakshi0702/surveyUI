@@ -23,16 +23,20 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/create-survey`, body);
   }
 
-
   getReportData(param: any): Observable<any> {
     return this.http.get(`${this.apiUrl}/report/` + param.id);
   }
+
+  updateSurveyData(body: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/edit-survey`, body);
+  }
+
   getSurveyDetail(param: any): Observable<any> {
     return this.http.get(`${this.apiUrl}/get-particular-survey/` + param.id);
   }
 
   addCollaborator(payload: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/invite-collaborator`,'',{
+    return this.http.post(`${this.apiUrl}/invite-collaborator`, '', {
       params: payload
     });
   }

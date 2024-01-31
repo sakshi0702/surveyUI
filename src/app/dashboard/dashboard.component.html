@@ -1,10 +1,11 @@
+<app-navbar></app-navbar>
 <div class="table-top">
   <button type="button" class="btn btn-active" (click)="getActiveSurveyList()">Active Surveys</button>
   <button type="button" class="btn btn-completed" (click)="getCompletedSurveyList()">Completed Surveys</button>
   <button type="button" class="btn btn-colabrated" (click)="getColaboratedSurveyList()">Colaborated Surveys</button>
   <button type="button" class="btn btn-primary" (click)="createSurvey()">Create new survey</button>
 </div>
-<div class="card-container">
+<div *ngIf="data?.length > 0" class="card-container">
   <div *ngFor="let data of data; let i = index" class="card">
     <div class="card-body">
       <h2 class="card-title" [innerText]="data.name"></h2>
@@ -18,7 +19,21 @@
         <span [innerText]="data.endTime | date:'HH:mm:ss'"></span>
       </div>
       <hr>
-      <button class="btn btn-primary" (click)="viewSurvey(data.id)">View detail</button>
+      <div>
+        <div>SURVEY LINK: </div>
+        <div>
+          <a href="http://localhost:4200/submission/{{data.id}}" target="_blank">
+            <span>http://localhost:4200/submission/</span>
+            <span [innerText]="data.id"></span>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="btn-seperator">
+        <button class="btn btn-primary" (click)="viewSurvey(data.id)">View</button>
+        <button class="btn btn-primary" (click)="editSurvey(data.id)">Edit</button>
+      </div>
     </div>
   </div>
 </div>
+<div *ngIf="data?.length < 1" class="no-data"></div>

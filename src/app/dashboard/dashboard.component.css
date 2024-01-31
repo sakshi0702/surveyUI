@@ -65,3 +65,19 @@
 .card-container {
   display: flex;
 }
+
+.no-data {
+  margin: 0px;
+  background-image: url(../../assets/images/no-data-found.jpeg);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.btn-seperator {
+ display: flex;
+ justify-content: space-between;
+}

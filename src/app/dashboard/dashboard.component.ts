@@ -76,4 +76,12 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  editSurvey(id: number) {
+    this.router.navigate(['/dashboard/form'], {
+      queryParams: {
+        userId: this.user_id,
+        id: id
+      }
+    });
+  }
 }

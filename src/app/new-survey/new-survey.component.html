@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div>
   <div class="table-top">
     <h2>Survey Form</h2>
@@ -41,9 +42,11 @@
         <div class="col-md-6">
           <div class="form-group has-feedback">
             <label for="type">Question Type:</label>
-            <select class="form-control" id="type" [(ngModel)]="question.questionType" name="type{{i}}" required>
+            <select class="form-control" id="type" (change)="setOptionsValue(i)" [(ngModel)]="question.questionType" name="type{{i}}"
+              required>
               <option value="Subjective">Subjective</option>
-              <option value="SingleSelect">SigleSelect</option>
+              <option value="SingleSelect">SignleSelect</option>
+              <option value="FivePointScale">FivePointScale</option>
             </select>
           </div>
         </div>
@@ -56,6 +59,22 @@
           </div>
           <button *ngIf="j > 0" type="button" class="add-remove-btn" (click)="removeOption(question, j)">Remove Option</button>
           <button *ngIf="l" type="button" class="add-remove-btn" (click)="addOption(question)">Add Option</button>
+        </div>
+      </div>
+      <div *ngIf="question.questionType === 'FivePointScale'">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group has-feedback">
+              <div class="five-point-scale">
+                <!-- Display numbers and labels in one line -->
+                <label class="scale-content" for="point1">1</label>
+                <label class="scale-content" for="point2">2</label>
+                <label class="scale-content" for="point3">3</label>
+                <label class="scale-content" for="point4">4</label>
+                <label class="scale-content" for="point5">5</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

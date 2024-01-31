@@ -60,3 +60,20 @@ button {
   background-color: #fff;
   border: 2px solid #E7ECF2;
 }
+
+.five-point-scale {
+  display: flex;
+  margin: 12px;
+}
+
+.scale-content {
+  border: 2px solid black;
+  padding: 16px;
+}
+
+.scale-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
