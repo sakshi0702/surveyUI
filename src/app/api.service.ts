@@ -22,4 +22,20 @@ export class ApiService {
   saveSurveyData(body: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/create-survey`, body);
   }
+
+  getSurveyDetail(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-particular-survey/` + param.id);
+  }
+
+  getActiveSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active-surveys/` + param.id + '/' + param.dateAndTime);
+  }
+
+  getCompletedSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/completed-surveys/` + param.id + '/' + param.dateAndTime);
+  }
+
+  getColaboratedSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-collaborated-survey/` + param.id);
+  }
 }

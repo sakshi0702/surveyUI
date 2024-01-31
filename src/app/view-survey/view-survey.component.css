@@ -1,0 +1,19 @@
+.table-top{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #E7ECF2;
+  padding: 4px;
+  background-color: #026a9a;
+}
+
+.view-container {
+  padding: 32px;
+  background-color: rgb(224, 208, 208);
+  max-width: 90%;
+  margin: auto;
+  min-height: calc(100vh - 190px);
+}
+
+.ques-detail-spacing {
+  margin-bottom: 16px;
+}

@@ -1,0 +1,45 @@
+<div class="table-top">
+  <h2>Survey Detail</h2>
+</div>
+<div class="view-container">
+  <div>
+    <h5>Survey Name: </h5>
+  </div>
+  <div [innerText]="data?.name"></div>
+  <hr>
+  <div>
+    <h5>Start Time: </h5>
+  </div>
+  <div [innerText]="data?.startTime | date:'yyyy-MM-dd HH:mm:ss'"></div>
+  <hr>
+  <div>
+    <h5>END Time: </h5>
+  </div>
+  <div [innerText]="data?.endTime | date:'yyyy-MM-dd HH:mm:ss'"></div>
+  <hr>
+  <div>
+    <h4>Survey Questions: </h4>
+  </div>
+  <div *ngFor="let question of data.questionList; let i = index;let last = last">
+    <div class="ques-detail-spacing">
+      <h5>Q{{i+1}}:</h5>
+    </div>
+    <div class="ques-detail-spacing">
+      <h5>Question Description: </h5>
+      <div [innerText]="question?.question"></div>
+    </div>
+    <div class="ques-detail-spacing">
+      <h5>Question Type: </h5>
+      <div [innerText]="question?.questionType"></div>
+    </div>
+    <div *ngIf="question?.questionType === 'SingleSelect'">
+      <div *ngFor="let data of question.options;let j = index">
+        <div class="ques-detail-spacing">
+          <h6>OP{{j+1}}:</h6>
+          <div [innerText]="data"></div>
+        </div>
+      </div>
+    </div>
+    <hr *ngIf="!last">
+  </div>
+</div>

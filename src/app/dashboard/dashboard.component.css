@@ -45,6 +45,15 @@
   display: inline-block;
 }
 
+.btn-colabrated {
+  background-color: #c8ce1a;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
 .table-top{
   display: flex;
   justify-content: space-between;

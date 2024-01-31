@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewSurveyComponent } from './view-survey/view-survey.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     ErrorComponent,
     NavbarComponent,
-    NewSurveyComponent
+    NewSurveyComponent,
+    ViewSurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

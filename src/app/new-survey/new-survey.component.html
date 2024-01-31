@@ -1,36 +1,67 @@
 <div>
-  <h2>Survey Form</h2>
+  <div class="table-top">
+    <h2>Survey Form</h2>
+  </div>
   <form (submit)="submitForm()">
-    <label for="name">Name:</label>
-    <input type="text" id="name" [(ngModel)]="surveyData.name" name="name" required>
-    <label for="startTime">Start Time:</label>
-    <input type="datetime-local" id="startTime" [(ngModel)]="surveyData.startTime" name="startTime" required>
-    <label for="endTime">End Time:</label>
-    <input type="datetime-local" id="endTime" [(ngModel)]="surveyData.endTime" name="endTime" required>
-    <div *ngFor="let question of surveyData.questionList; let i = index">
-      <label for="description">Question Number: {{i+1}}</label>
-      <label for="description">Question Description:</label>
-      <input type="text" id="description" [(ngModel)]="question.question" name="description" required>
-      <label for="type">Question Type:</label>
-      <select id="type" [(ngModel)]="question.questionType" name="type" required>
-        <option value="Subjective">Text</option>
-        <option value="SingleSelect">Multiple Choice</option>
-      </select>
-      <div *ngIf="question.questionType === 'SingleSelect'">
-        <div *ngFor="let option of question.options; let j = index">
-          <label for="option">Option {{ j + 1 }}:</label>
-          <input type="text" id="option" [(ngModel)]="question.options[j]" name="option" required>
-          <button type="button" (click)="removeOption(question, j)">Remove Option</button>
+    <div class="form-group has-feedback">
+      <label for="name">Name:</label>
+      <input class="form-control" type="text" id="name" [(ngModel)]="surveyData.name" name="name" required>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group has-feedback">
+          <label for="startTime">Start Time:</label>
+          <input class="form-control" type="datetime-local" id="startTime" [(ngModel)]="surveyData.startTime" name="startTime" required>
         </div>
-        <button type="button" (click)="addOption(question)">Add Option</button>
       </div>
-      <div>
-        <button type="button" (click)="removeQuestion(i)">Remove Question</button>
-      </div>
-      <div>
-        <button type="button" (click)="addQuestion(i)">Add Question</button>
+      <div class="col-md-6">
+        <div class="form-group has-feedback">
+          <label for="endTime">End Time:</label>
+          <input class="form-control" type="datetime-local" id="endTime" [(ngModel)]="surveyData.endTime" name="endTime" required>
+        </div>
       </div>
     </div>
-    <button type="submit">Submit</button>
+    <div *ngFor="let question of surveyData.questionList; let i = index; let last = last;trackBy: trackByFn" class="question-container">
+      <div class="question-heading row">
+        <div class="col-md-10">
+          <label for="description">Question Number: {{i+1}}</label>
+        </div>
+        <div class="col-md-1">
+          <button *ngIf="i > 0" type="button" class="add-remove-btn" (click)="removeQuestion(i)">Remove</button>
+        </div>
+        <div class="col-md-1">
+          <button *ngIf="last" type="button" class="add-remove-btn" (click)="addQuestion(i)">Add</button>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="description">Question Description:</label>
+        <input class="form-control" type="text" id="description" [(ngModel)]="question.question" name="description{{i}}" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group has-feedback">
+            <label for="type">Question Type:</label>
+            <select class="form-control" id="type" [(ngModel)]="question.questionType" name="type{{i}}" required>
+              <option value="Subjective">Subjective</option>
+              <option value="SingleSelect">SigleSelect</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="question.questionType === 'SingleSelect'">
+        <div class="col-md-6" *ngFor="let option of question.options; let j = index; let l = last;trackBy: trackByFn">
+          <div class="form-group has-feedback">
+            <label for="option">Option {{ j + 1 }}:</label>
+            <input type="text" class="form-control" id="option" [(ngModel)]="question.options[j]" name="options{{i}}{{j}}" required>
+          </div>
+          <button *ngIf="j > 0" type="button" class="add-remove-btn" (click)="removeOption(question, j)">Remove Option</button>
+          <button *ngIf="l" type="button" class="add-remove-btn" (click)="addOption(question)">Add Option</button>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn cancle-btn" (click)="cancel()">Cancel</button>
+      <button type="submit">Submit</button>
+    </div>
   </form>
 </div>
