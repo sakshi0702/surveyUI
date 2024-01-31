@@ -1,19 +1,76 @@
-.table-top{
+.table-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 2px solid #E7ECF2;
-  padding: 4px;
+  padding: 20px;
   background-color: #026a9a;
+  color: white;
+  font-size: 24px;
 }
 
 .view-container {
-  padding: 32px;
-  background-color: rgb(224, 208, 208);
+  padding: 20px;
+  background-color: #f5f5f5;
   max-width: 90%;
   margin: auto;
   min-height: calc(100vh - 190px);
 }
 
+.add-collaborator-section {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.add-collaborator-section input[type="email"],
+.add-collaborator-section select {
+  margin-right: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.add-collaborator-section button {
+  padding: 10px 20px;
+  background-color: #026a9a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-collaborator-section button:hover {
+  background-color: #015179;
+}
+
+.collaborators-container {
+  margin-bottom: 20px;
+}
+
+.collaborator-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.collaborator-list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
 .ques-detail-spacing {
   margin-bottom: 16px;
+}
+
+.ques-detail-spacing h5,
+.ques-detail-spacing h6 {
+  margin: 0;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
 }
