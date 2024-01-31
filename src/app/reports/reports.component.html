@@ -1,0 +1,19 @@
+<!-- Updated HTML -->
+<div *ngFor="let model of data" class="question-container">
+    <h4 class="question-title">Question: {{ model.ques }}</h4>
+    <h5 class="total-count">Total Count: {{ model.totalCount }}</h5>
+    <ol *ngIf="checkIfList(model.stats)" class="list-container">
+        <li *ngFor="let listItem of model.stats" class="list-item">{{ listItem }}</li>
+    </ol>
+    <div *ngIf="!checkIfList(model.stats)" class="pie-chart-container">
+        <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="pieChartData"
+            [labels]="true"
+            [legend]="true"
+            [explodeSlices]="false"
+            [doughnut]="false"
+        >
+        </ngx-charts-pie-chart>
+    </div>
+</div>

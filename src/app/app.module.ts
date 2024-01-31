@@ -10,6 +10,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewSurveyComponent } from './new-survey/new-survey.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ReportsComponent } from './reports/reports.component';
+import { ListComponent } from './list/list.component';
+import { PiechartComponent } from './piechart/piechart.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +22,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     ErrorComponent,
     NavbarComponent,
-    NewSurveyComponent
+    NewSurveyComponent,
+    ReportsComponent,
+    ListComponent,
+    PiechartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

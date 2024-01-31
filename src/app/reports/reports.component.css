@@ -1,0 +1,86 @@
+/* pie-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+.chart-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+p{
+  margin: 0;
+  padding: auto;
+} */
+
+/* Updated CSS Styling */
+.question-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-title {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .total-count {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  
+  .list-container {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .list-item {
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #007bff;
+  }
+  
+  .pie-chart-container {
+    margin-top: 15px;
+  }
+  
+  /* Styling for ngx-charts-pie-chart */
+  ::ng-deep ngx-charts-pie-chart .tooltip-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  ::ng-deep ngx-charts-pie-chart .tooltip {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  ::ng-deep ngx-charts-pie-chart text {
+    font-size: 14px;
+    fill: #333;
+  }
+  ngx-charts-pie-chart :hover{
+    background-color: #555;
+  }
+  

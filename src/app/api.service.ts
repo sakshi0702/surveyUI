@@ -22,4 +22,8 @@ export class ApiService {
   saveSurveyData(body: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/create-survey`, body);
   }
+
+  getReportData(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/report/` + param.id);
+  }
 }
