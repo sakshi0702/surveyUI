@@ -1,10 +1,8 @@
 <nav class="navbar">
-  <ul class="nav-list nav-item">
-    <li>
+  <ul class="nav-list">
+    <li class="nav-item">
       <a routerLink="/">Home</a>
     </li>
-    <!-- <li>
-      <a routerLink="/contact">Log out</a>
-    </li> -->
   </ul>
+  <a class="nav-item logout-link" (click)="logout()" routerLink="">Logout</a>
 </nav>
