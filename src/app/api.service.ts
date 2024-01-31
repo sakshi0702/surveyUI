@@ -34,11 +34,11 @@ export class ApiService {
   }
 
   getActiveSurveys(param: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}/active-surveys/` + param.id + '/' + param.dateAndTime);
+    return this.http.get(`${this.apiUrl}/active-surveys/` + param.id);
   }
 
   getCompletedSurveys(param: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}/completed-surveys/` + param.id + '/' + param.dateAndTime);
+    return this.http.get(`${this.apiUrl}/completed-surveys/` + param.id);
   }
 
   getColaboratedSurveys(param: any): Observable<any> {
