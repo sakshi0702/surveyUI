@@ -17,6 +17,27 @@
   </div>
   <div [innerText]="data?.endTime | date:'yyyy-MM-dd HH:mm:ss'"></div>
   <hr>
+  <div class="collaborators-container" *ngIf="data?.collaborators && data.collaborators.length > 0">
+    <h4>Collaborators:</h4>
+    <ul class="collaborator-list">
+      <li *ngFor="let collaborator of data.collaborators">
+        {{ collaborator.email }}
+      </li>
+    </ul>
+  </div>
+  <div class="add-collaborator-section">
+    <h5>Add Collaborator: </h5>
+    <input type="email" [(ngModel)]="collaboratorEmail" placeholder="Enter Email Address">
+    <select [(ngModel)]="permissionType">
+      <option value="Edit">Edit</option>
+      <option value="View">View</option>
+    </select>
+    <button (click)="addCollaborator()">Add</button>
+    <div *ngIf="collaboratorAddedMessage" class="collaborator-added-message" style="color: red;">
+      {{ collaboratorAddedMessage }}
+    </div>
+  </div>
+  
   <div>
     <h4>Survey Questions: </h4>
   </div>
