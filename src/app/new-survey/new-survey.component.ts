@@ -34,7 +34,7 @@ export class NewSurveyComponent {
 
   addQuestion(index: number) {
     this.surveyData.questionList.push({
-      id: index + 1,
+      id: index + 2,
       question: '',
       questionType: '',
       options: ['']
@@ -62,6 +62,18 @@ export class NewSurveyComponent {
           userId: this.data.userId
         }
       });
+    });
+  }
+
+  trackByFn(index: number, item: any) {
+    return index; // or item.id if you have one
+  }
+
+  cancel() {
+    this.router.navigate(['/dashboard'], {
+      queryParams: {
+        userId: this.user_id
+      }
     });
   }
 

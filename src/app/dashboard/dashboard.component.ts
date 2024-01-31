@@ -28,14 +28,50 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  getActiveSurveyList() { }
+  getActiveSurveyList() {
+    const param = {
+      'id': this.user_id,
+    }
+    this.apiService.getActiveSurveys(param).subscribe((response) => {
+      this.data = response;
+    });
+  }
 
-  getCompletedSurveyList() { }
+  getCompletedSurveyList() {
+    const param = {
+      'id': this.user_id,
+    }
+    this.apiService.getCompletedSurveys(param).subscribe((response) => {
+      this.data = response;
+    });
+  }
+
+  getColaboratedSurveyList() {
+    const param = {
+      'id': this.user_id,
+    }
+    this.apiService.getColaboratedSurveys(param).subscribe((response) => {
+      this.data = response;
+      this.router.navigate(['/dashboard'], {
+        queryParams: {
+          userId: this.user_id
+        }
+      });
+    });
+  }
 
   createSurvey() {
     this.router.navigate(['/dashboard/form'], {
       queryParams: {
         userId: this.user_id
+      }
+    });
+  }
+
+  viewSurvey(id: number) {
+    this.router.navigate(['/view'], {
+      queryParams: {
+        id: id
       }
     });
   }

@@ -1,6 +1,7 @@
 <div class="table-top">
   <button type="button" class="btn btn-active" (click)="getActiveSurveyList()">Active Surveys</button>
   <button type="button" class="btn btn-completed" (click)="getCompletedSurveyList()">Completed Surveys</button>
+  <button type="button" class="btn btn-colabrated" (click)="getColaboratedSurveyList()">Colaborated Surveys</button>
   <button type="button" class="btn btn-primary" (click)="createSurvey()">Create new survey</button>
 </div>
 <div class="card-container">
@@ -8,11 +9,16 @@
     <div class="card-body">
       <h2 class="card-title" [innerText]="data.name"></h2>
       <hr>
-      <div class="card-text">Number of response</div>
-      <div>Respondets</div>
-      <div>ENDS ON:</div>
+      <div>
+        <span>ENDS ON: </span>
+        <span [innerText]="data.endTime | date:'yyyy-MM-dd'"></span>
+      </div>
+      <div>
+        <span>ENDS AT: </span>
+        <span [innerText]="data.endTime | date:'HH:mm:ss'"></span>
+      </div>
       <hr>
-      <a href="#" class="btn btn-primary">View detail</a>
+      <button class="btn btn-primary" (click)="viewSurvey(data.id)">View detail</button>
     </div>
   </div>
 </div>

@@ -23,7 +23,41 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/create-survey`, body);
   }
 
+
   getReportData(param: any): Observable<any> {
     return this.http.get(`${this.apiUrl}/report/` + param.id);
+  }
+  getSurveyDetail(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-particular-survey/` + param.id);
+  }
+
+  addCollaborator(payload: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/invite-collaborator`,'',{
+      params: payload
+    });
+  }
+
+  getActiveSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/active-surveys/` + param.id);
+  }
+
+  getCompletedSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/completed-surveys/` + param.id);
+  }
+
+  getColaboratedSurveys(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-collaborated-survey/` + param.id);
+  }
+
+  getParticularSurvey(param: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/get-particular-survey/` + param); // param will only have survey id
+  }
+
+  submitSurveyAnswers(surveyId: string, answerList: any[]): Observable<any> {
+    const body = {
+      surveyId: surveyId,
+      answerList: answerList
+    };
+    return this.http.post(`${this.apiUrl}/answer/${surveyId}`, body);
   }
 }

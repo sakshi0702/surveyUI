@@ -14,6 +14,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ReportsComponent } from './reports/reports.component';
 import { ListComponent } from './list/list.component';
 import { PiechartComponent } from './piechart/piechart.component';
+import { ViewSurveyComponent } from './view-survey/view-survey.component';
+import { DatePipe } from '@angular/common';
+import { SubmissionComponent } from './submission/submission.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { PiechartComponent } from './piechart/piechart.component';
     NewSurveyComponent,
     ReportsComponent,
     ListComponent,
-    PiechartComponent
+    PiechartComponent,
+    ViewSurveyComponent,
+    SubmissionComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,7 @@ import { PiechartComponent } from './piechart/piechart.component';
     HttpClientModule,
     NgxChartsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
